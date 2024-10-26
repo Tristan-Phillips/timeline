@@ -1,6 +1,9 @@
 #include "crow.h"
 #include <pqxx/pqxx>
 #include <string>
+#include <iostream>
+
+using namespace std;
 
 
 int main () {
