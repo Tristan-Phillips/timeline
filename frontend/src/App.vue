@@ -1,24 +1,23 @@
 <template>
     <div id="app">
-        <NavigationPage></NavigationPage>
-        <HomePage></HomePage>
+        <NavigationBar />
     </div>
 </template>
 
 <script>
-import HomePage from './components/Home.vue'
-import NavigationPage from './components/Navigation.vue'
+import NavigationBar from './components/Navigation.vue'
 
 export default {
   name: 'App',
   components: {
-    HomePage,
-    NavigationPage
+    NavigationBar
   }
 }
 </script>
 
 <style>
 #app {
+    margin: 0;
+    padding: 0;
 }
 </style>

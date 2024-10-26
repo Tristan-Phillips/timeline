@@ -21,17 +21,12 @@ Users can also upvote or downvote additions to a timeline.
 - Link to external resources (websites, videos, images, text)
 - Upvote and downvote timeline entries
 - Version control for timeline changes
-- Authentication and authorization for managing timelines
+- Authentication and authorization for managing timelines (Priv/Pub keys)
 
 ## Technologies Used
-- **Backend**: Node.js, Express
+- **Backend**: C++, Crow, pqxx
 - **Frontend**: Vue.js, Vue Router, Vuex, Axios
-- **Development Tools**: Nodemon, Dotenv
 - **Version Control**: Git, GitHub
-
-### Prerequisites 
-- Node.js (v14 or later)
-- npm
 
 ## License
 This project is licensed under the GNU General Public License v3.0

@@ -1,5 +1,6 @@
-backend/node_modules/
-frontend/node_modules/
+# Backend
+backend/build/
+backend/third_party/
 
 # Frontend
 frontend/.DS_Store
