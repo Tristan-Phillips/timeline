@@ -25,6 +25,8 @@ file(GLOB_RECURSE SRC_FILES
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(LIBPQXX REQUIRED libpqxx)
 
+find_package(OpenSSL REQUIRED)
+
 # Add the executable
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
@@ -32,6 +34,7 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
     ${LIBPQXX_LIBRARIES}
+    OpenSSL::SSL
 )
 
 # Include directories
@@ -53,6 +56,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/database
     ${CMAKE_CURRENT_SOURCE_DIR}/src/setup/database
     ${CMAKE_CURRENT_SOURCE_DIR}/src/config
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/email
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/email/smtp
     ${LIBPQXX_INCLUDE_DIRS}
 )
 

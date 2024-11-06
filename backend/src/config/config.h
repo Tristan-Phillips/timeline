@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <unordered_map>
+#include "smtp.h"
 
 class Config {
     public:

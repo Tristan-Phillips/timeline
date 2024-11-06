@@ -4,6 +4,7 @@
 #include "writeJSON.h"
 #include "databaseLocal.h"
 #include "config.h"
+#include "smtp.h"
 
 int main() {
     ReadJSON reader;
