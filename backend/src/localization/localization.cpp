@@ -1,24 +1,16 @@
 #include "localization.h"
-#include <fstream>
-#include <iostream>
 
-Localization::Localization(const std::string& filePath) {
-    loadFromFile(filePath);
+Localization::Localization(Read* reader, Write* writer, const std::string& filePath)
+    : m_reader(reader), m_writer(writer), m_filePath(filePath) {
+    load();
 }
 
-void Localization::loadFromFile(const std::string& filePath) {
-    std::ifstream file(filePath);
-    if (!file.is_open()) {
-        std::cerr << "Could not open the file: " << filePath << std::endl;
-        return;
-    }
+void Localization::load() {
+    m_translations = m_reader->readFile(m_filePath);
+}
 
-    nlohmann::json jsonData;
-    file >> jsonData;
-
-    for (auto it = jsonData.begin(); it != jsonData.end(); ++it) {
-        m_translations[it.key()] = it.value();
-    }
+void Localization::save() const {
+    m_writer->writeFile(m_filePath, m_translations);
 }
 
 std::string Localization::getString(const std::string& key) const {
@@ -27,4 +19,9 @@ std::string Localization::getString(const std::string& key) const {
         return it->second;
     }
     return ""; // return an empty string if the key is not found
+}
+
+void Localization::setString(const std::string& key, const std::string& value) {
+    m_translations[key] = value;
+    save(); // Automatically save changes
 }
