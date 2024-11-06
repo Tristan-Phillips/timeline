@@ -2,6 +2,7 @@
 #include "localization.h"
 #include "readJSON.h"
 #include "writeJSON.h"
+#include "databaseLocal.h"
 
 int main() {
     ReadJSON reader;
@@ -15,6 +16,8 @@ int main() {
     std::cout << farewell << std::endl;
 
     localization.setString("new_key", "New Value");
+
+    DatabaseLocal database("username", "password", "localhost", "5432", "databaseName");
 
     return 0;
 }
