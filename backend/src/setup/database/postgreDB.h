@@ -12,6 +12,7 @@ public:
 private:
     Database* m_database;
 
+    bool databaseExists();
     void updateSystem();
     void installPostgreSQL();
     void initializeDatabaseCluster();

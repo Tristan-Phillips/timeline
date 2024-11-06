@@ -3,6 +3,7 @@
 #include "readJSON.h"
 #include "writeJSON.h"
 #include "databaseLocal.h"
+#include "config.h"
 
 int main() {
     ReadJSON reader;
@@ -17,7 +18,10 @@ int main() {
 
     localization.setString("new_key", "New Value");
 
-    DatabaseLocal database("username", "password", "localhost", "5432", "databaseName");
+
+    Config config;
+    std::unordered_map<std::string, std::string> env = config.readEnv();
+    DatabaseLocal database(env["PGUSER"], env["PGPASSWORD"], env["PGHOST"], env["PGPORT"], env["PGDATABASE"]);
 
     return 0;
 }

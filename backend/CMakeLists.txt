@@ -40,6 +40,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/localization
     ${CMAKE_CURRENT_SOURCE_DIR}/src/parsers
     ${CMAKE_CURRENT_SOURCE_DIR}/src/parsers/json
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/parsers/env
     ${CMAKE_CURRENT_SOURCE_DIR}/src/user
     ${CMAKE_CURRENT_SOURCE_DIR}/src/user/userinfo
     ${CMAKE_CURRENT_SOURCE_DIR}/src/user/connections
@@ -51,6 +52,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/user/connections/teams
     ${CMAKE_CURRENT_SOURCE_DIR}/src/database
     ${CMAKE_CURRENT_SOURCE_DIR}/src/setup/database
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/config
     ${LIBPQXX_INCLUDE_DIRS}
 )
 

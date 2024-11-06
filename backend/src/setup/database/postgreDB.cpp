@@ -43,6 +43,10 @@ void PostgreDB::configureLocalAccess() {
 }
 
 void PostgreDB::setup() {
+    if (databaseExists()) {
+        std::cout << "Database already exists\n";
+        return;
+    }
     updateSystem();
     installPostgreSQL();
     initializeDatabaseCluster();
@@ -51,4 +55,13 @@ void PostgreDB::setup() {
     configureLocalAccess();
     restartService();
     std::cout << "PostgreSQL setup complete\n";
+}
+
+bool PostgreDB::databaseExists() {
+    std::string connectionString = "dbname=" + m_database->getDatabaseName() + " user=" + m_database->getUsername() + " password=" + m_database->getPassword() + " host=" + m_database->getHost() + " port=" + m_database->getPort();
+    pqxx::connection connection(connectionString);
+    if (connection.is_open()) {
+        return true;
+    }
+    return false;
 }
