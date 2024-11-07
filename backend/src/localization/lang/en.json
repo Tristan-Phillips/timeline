@@ -1,4 +1,6 @@
 {
+    "main_init": "Starting main process...",
+    "mockDatabase_init": "Starting mock database...",
     "greeting": "Hello, World!",
     "goodbye": "Goodbye, World!"
 }

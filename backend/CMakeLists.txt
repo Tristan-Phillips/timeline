@@ -58,6 +58,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/config
     ${CMAKE_CURRENT_SOURCE_DIR}/src/email
     ${CMAKE_CURRENT_SOURCE_DIR}/src/email/smtp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/tests
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/tests/mock
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/output
     ${LIBPQXX_INCLUDE_DIRS}
 )
 
