@@ -1,5 +1,4 @@
-#ifndef READ_H
-#define READ_H
+#pragma once
 
 #include <string>
 #include <unordered_map>
@@ -9,5 +8,3 @@ public:
     virtual ~Read() = default;
     virtual std::unordered_map<std::string, std::string> readFile(const std::string& filePath) const = 0;
 };
-
-#endif // READ_H

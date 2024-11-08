@@ -1,9 +1,6 @@
-#ifndef USERINFO_H
-#define USERINFO_H
+#pragma once
 
 class UserInfo {
 public:
     UserInfo() = default;
 };
-
-#endif // USERINFO_H

@@ -1,5 +1,4 @@
-#ifndef LOCALIZATION_H
-#define LOCALIZATION_H
+#pragma once
 
 #include <string>
 #include <unordered_map>
@@ -21,5 +20,3 @@ private:
     void load();
     void save() const;
 };
-
-#endif // LOCALIZATION_H

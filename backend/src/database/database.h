@@ -1,5 +1,4 @@
-#ifndef DATABASE_H
-#define DATABASE_H
+#pragma once
 
 #include <string>
 
@@ -24,5 +23,3 @@ public:
     const std::string& getPort() const { return m_port; }
     const std::string& getDatabaseName() const { return m_databaseName; }
 };
-
-#endif // DATABASE_H

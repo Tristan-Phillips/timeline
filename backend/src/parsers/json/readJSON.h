@@ -1,5 +1,4 @@
-#ifndef READ_JSON_H
-#define READ_JSON_H
+#pragma once
 
 #include "read.h"
 #include <unordered_map>
@@ -9,5 +8,3 @@ class ReadJSON : public Read {
 public:
     std::unordered_map<std::string, std::string> readFile(const std::string& filePath) const override;
 };
-
-#endif // READ_JSON_H

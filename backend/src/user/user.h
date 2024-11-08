@@ -1,5 +1,4 @@
-#ifndef USER_H
-#define USER_H
+#pragma once
 
 #include <string>
 #include "userinfo/userInfo.h"
@@ -33,5 +32,3 @@ protected:
     // Teams m_teams;
     // Collaborators m_collaborators;
 };
-
-#endif // USER_H

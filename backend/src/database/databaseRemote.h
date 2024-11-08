@@ -1,5 +1,4 @@
-#ifndef DATABASE_REMOTE_H
-#define DATABASE_REMOTE_H
+#pragma once
 
 #include <string>
 #include "database.h"
@@ -11,5 +10,3 @@ public:
 private:
 
 };
-
-#endif // DATABASE_REMOTE_H

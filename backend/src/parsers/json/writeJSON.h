@@ -1,5 +1,4 @@
-#ifndef WRITE_JSON_H
-#define WRITE_JSON_H
+#pragma once
 
 #include "write.h"
 #include <unordered_map>
@@ -9,5 +8,3 @@ class WriteJSON : public Write {
 public:
     void writeFile(const std::string& filePath, const std::unordered_map<std::string, std::string>& data) const override;
 };
-
-#endif // WRITE_JSON_H

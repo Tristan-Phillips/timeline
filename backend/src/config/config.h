@@ -1,5 +1,4 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include <string>
 #include <map>
@@ -11,5 +10,3 @@ class Config {
         Config() = default;
         std::unordered_map<std::string, std::string> readEnv();
 };
-
-#endif // CONFIG_H

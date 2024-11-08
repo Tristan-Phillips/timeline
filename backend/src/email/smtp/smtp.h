@@ -1,5 +1,4 @@
-#ifndef SMTP_H
-#define SMTP_H
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -13,5 +12,3 @@ private:
     std::unordered_map<std::string, std::string> m_env;
     std::string Base64Encode(const std::string &input);
 };
-
-#endif // SMTP_H

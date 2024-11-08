@@ -1,5 +1,4 @@
-#ifndef POSTGREDB_H
-#define POSTGREDB_H
+#pragma once
 
 #include <string>
 #include <pqxx/pqxx>
@@ -22,5 +21,3 @@ private:
     void restartService();
     void setup();
 };
-
-#endif // POSTGREDB_H
