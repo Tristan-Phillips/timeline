@@ -23,6 +23,7 @@ public:
     static Logger& getInstance();
 
     void log(const std::string& message, LogLevel level = LogLevel::INFO);
+    std::string logAndReturn(const std::string& message, LogLevel level = LogLevel::INFO);
     void setLogLevel(LogLevel level);
     void setOutputFile(const std::string& filename);
     void enableConsoleOutput(bool enable);

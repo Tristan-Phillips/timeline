@@ -59,3 +59,8 @@ void Logger::logToFile(const std::string& message) {
 void Logger::logToConsole(const std::string& message) {
     std::cout << message << std::endl;
 }
+
+std::string Logger::logAndReturn(const std::string& message, LogLevel level) {
+    log(message, level);
+    return m_localization.getString(message);
+}

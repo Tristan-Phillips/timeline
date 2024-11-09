@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netdb.h>
+#include "logger.h"
 
 void SMTP::sendEmail(const std::string& recipient, const std::string& subject, const std::string& body) {
     SSL_library_init();
@@ -18,19 +19,19 @@ void SMTP::sendEmail(const std::string& recipient, const std::string& subject, c
     SSL_CTX *ctx = SSL_CTX_new(method);
     if (ctx == nullptr) {
         ERR_print_errors_fp(stderr);
-        throw std::runtime_error("Unable to create SSL context");
+        throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_unable_to_create_SSL_context", LogLevel::CRITICAL));
     }
 
     struct hostent *host = gethostbyname(m_env["SMTPHOST"].c_str());
     if (host == nullptr) {
         SSL_CTX_free(ctx);
-        throw std::runtime_error("Unable to resolve SMTP server address");
+        throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_unable_to_resolve_smtp_server_address", LogLevel::CRITICAL));
     }
 
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) {
         SSL_CTX_free(ctx);
-        throw std::runtime_error("Unable to create socket");
+        throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_unable_to_create_socket", LogLevel::CRITICAL));
     }
 
     struct sockaddr_in server_addr;
@@ -42,7 +43,7 @@ void SMTP::sendEmail(const std::string& recipient, const std::string& subject, c
     if (connect(sockfd, (struct sockaddr *)&server_addr, sizeof(struct sockaddr)) < 0) {
         close(sockfd);
         SSL_CTX_free(ctx);
-        throw std::runtime_error("Cannot connect to the SMTP server");
+        throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_cannot_connect_to_the_smtp_server", LogLevel::CRITICAL));
     }
 
     SSL *ssl = SSL_new(ctx);
@@ -52,14 +53,14 @@ void SMTP::sendEmail(const std::string& recipient, const std::string& subject, c
         close(sockfd);
         SSL_free(ssl);
         SSL_CTX_free(ctx);
-        throw std::runtime_error("SSL connection failed");
+        throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_ssl_connection_failed", LogLevel::CRITICAL));
     }
 
     auto send_command = [&](const std::string &cmd) {
         std::cout << "C: " << cmd << std::endl;
         if (SSL_write(ssl, cmd.c_str(), cmd.size()) <= 0) {
             ERR_print_errors_fp(stderr);
-            throw std::runtime_error("Failed to send command to SMTP server");
+            throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_failed_to_send_command_to_smtp_server", LogLevel::CRITICAL));
         }
     };
 
@@ -68,7 +69,7 @@ void SMTP::sendEmail(const std::string& recipient, const std::string& subject, c
         int bytes = SSL_read(ssl, buffer, sizeof(buffer) - 1);
         if (bytes < 0) {
             ERR_print_errors_fp(stderr);
-            throw std::runtime_error("Failed to read response from SMTP server");
+            throw std::runtime_error(Logger::getInstance().logAndReturn("smtp_failed_to_read_response_from_smtp_server", LogLevel::CRITICAL));
         }
         buffer[bytes] = '\0';
         std::string response(buffer);

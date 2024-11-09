@@ -1,6 +1,11 @@
 {
     "main_init": "Starting main process...",
     "mockDatabase_init": "Starting mock database...",
-    "greeting": "Hello, World!",
-    "goodbye": "Goodbye, World!"
+    "smtp_unable_to_create_SSL_context": "Unable to create SSL context",
+    "smtp_unable_to_resolve_smtp_server_address": "Unable to resolve SMTP server address",
+    "smtp_unable_to_create_socket": "Unable to create socket",
+    "smtp_cannot_connect_to_the_smtp_server": "Cannot connect to the SMTP server",
+    "smtp_ssl_connection_failed": "SSL connection failed",
+    "smtp_failed_to_send_command_to_smtp_server": "Failed to send command to SMTP server",
+    "smtp_failed_to_read_response_from_smtp_server": "Failed to read response from SMTP server" 
 }
