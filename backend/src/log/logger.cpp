@@ -3,7 +3,7 @@
 #include <ctime>
 #include <sstream>
 
-Logger::Logger() : m_logLevel(LogLevel::INFO), m_consoleOutput(true) {}
+Logger::Logger() : m_logLevel(LogLevel::DEBUG), m_consoleOutput(true) {}
 
 Logger::~Logger() {
     if (m_fileStream.is_open()) {
