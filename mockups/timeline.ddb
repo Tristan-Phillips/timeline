@@ -1,0 +1,642 @@
+{
+  "author": "Unnamed",
+  "title": "timeline",
+  "date": "2024-11-12T11:12:39.445Z",
+  "tables": [
+    {
+      "name": "users",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "username",
+          "type": "TEXT",
+          "comment": "",
+          "unique": true,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "comment": "",
+          "unique": true,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "password_hash",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        }
+      ],
+      "indices": [],
+      "id": 0,
+      "x": 70,
+      "y": -189
+    },
+    {
+      "name": "user_metadata",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "additional_info",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 1,
+      "x": -292,
+      "y": -193
+    },
+    {
+      "name": "organizations",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        }
+      ],
+      "indices": [],
+      "id": 2,
+      "x": 77.99999999999989,
+      "y": -398
+    },
+    {
+      "name": "timelines",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "owner_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        },
+        {
+          "name": "is_public",
+          "type": "BOOLEAN",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "false",
+          "check": "",
+          "id": 4
+        }
+      ],
+      "indices": [],
+      "id": 3,
+      "x": 414,
+      "y": -407
+    },
+    {
+      "name": "timeline_entries",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "timeline_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "entry_type",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "content",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        }
+      ],
+      "indices": [],
+      "id": 4,
+      "x": 992,
+      "y": -444
+    },
+    {
+      "name": "comments",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "entry_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "comment_text",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        }
+      ],
+      "indices": [],
+      "id": 5,
+      "x": 1033,
+      "y": 77
+    },
+    {
+      "name": "user_connections",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "connected_user_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "connection_type",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        }
+      ],
+      "indices": [],
+      "id": 6,
+      "x": 736,
+      "y": -244.00000000000003
+    },
+    {
+      "name": "versions",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "timeline_entry_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "version_number",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "changes",
+          "type": "TEXT",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        }
+      ],
+      "indices": [],
+      "id": 7,
+      "x": 690.9999999999999,
+      "y": -602
+    },
+    {
+      "name": "tags",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "id",
+          "type": "SERIAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "comment": "",
+          "unique": true,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 8,
+      "x": 112,
+      "y": 185
+    },
+    {
+      "name": "timeline_tags",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "timeline_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "tag_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 9,
+      "x": 52,
+      "y": 36.99999999999994
+    }
+  ],
+  "relationships": [
+    {
+      "name": "user_metadata_user_id_fk",
+      "startTableId": 1,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "startFieldId": 0,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 0
+    },
+    {
+      "name": "timelines_owner_id_fk",
+      "startTableId": 3,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "startFieldId": 3,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 1
+    },
+    {
+      "name": "timeline_entries_timeline_id_fk",
+      "startTableId": 4,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 2
+    },
+    {
+      "name": "comments_entry_id_fk",
+      "startTableId": 5,
+      "endTableId": 4,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 3
+    },
+    {
+      "name": "comments_user_id_fk",
+      "startTableId": 5,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "startFieldId": 2,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 4
+    },
+    {
+      "name": "user_connections_user_id_fk",
+      "startTableId": 6,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 5
+    },
+    {
+      "name": "user_connections_connected_user_id_fk",
+      "startTableId": 6,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "startFieldId": 2,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 6
+    },
+    {
+      "name": "versions_timeline_entry_id_fk",
+      "startTableId": 7,
+      "endTableId": 4,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 7
+    },
+    {
+      "name": "timeline_tags_timeline_id_fk",
+      "startTableId": 9,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "startFieldId": 0,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 8
+    },
+    {
+      "name": "timeline_tags_tag_id_fk",
+      "startTableId": 9,
+      "endTableId": 8,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one",
+      "id": 9
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "postgresql",
+  "types": [],
+  "enums": []
+}
