@@ -15,8 +15,3 @@ bool MockDatabase::connect() {
 void MockDatabase::disconnect() {
     Logger::getInstance().log("mockDatabase_disconnect", LogLevel::DEBUG);
 }
-
-bool MockDatabase::executeQuery(const std::string& query) {
-    Logger::getInstance().log("mockDatabase_executeQuery", LogLevel::DEBUG);
-    return true;
-}

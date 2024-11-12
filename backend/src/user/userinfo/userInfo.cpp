@@ -1,6 +1,7 @@
 #include "userInfo.h"
 
 UserInfo::UserInfo() {
+    setUserId();
 }
 
 void UserInfo::setUsername(const std::string& username) {

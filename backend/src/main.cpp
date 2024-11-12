@@ -12,6 +12,6 @@ int main() {
     Config config;
     std::unordered_map<std::string, std::string> env = config.readEnv();
     MockDatabase database(env["PGUSER"], env["PGPASSWORD"], env["PGHOST"], env["PGPORT"], env["PGDATABASE"]);
-    
+    database.connect();
     return 0;
 }

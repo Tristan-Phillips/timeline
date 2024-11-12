@@ -11,7 +11,3 @@ bool DatabaseLocal::connect() {
 
 void DatabaseLocal::disconnect() {
 }
-
-bool DatabaseLocal::executeQuery(const std::string& query) {
-    return true;
-}
