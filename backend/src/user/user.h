@@ -6,9 +6,15 @@
 #include "userConnections.h"
 #include "logger.h"
 
+enum class UserType {
+    ADMIN,
+    MODERATOR,
+    USER
+};
+
 class User {
 public:
-    User(std::string username); // What arguments should I pass ?
+    User(UserType userType); // What should I pass ?
 
     // User information
     UserInfo& getUserInfo();
@@ -17,4 +23,5 @@ protected:
     // Member variables
     UserInfo m_userInfo;
     std::vector<UserConnections*> m_connections;
+    UserType m_userType;
 };
