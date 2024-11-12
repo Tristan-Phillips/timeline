@@ -6,7 +6,6 @@
 class UserConnections {
 public:
     virtual ~UserConnections() = default;
-
-    void addConnection(const std::string& userId) = 0;
-    void removeConnection(const std::string& userId) = 0;
+    virtual void addConnection(const std::string& userId) = 0;
+    virtual void removeConnection(const std::string& userId) = 0;
 };

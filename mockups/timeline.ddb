@@ -1,7 +1,7 @@
 {
   "author": "Unnamed",
   "title": "timeline",
-  "date": "2024-11-12T11:12:39.445Z",
+  "date": "2024-11-12T11:15:53.971Z",
   "tables": [
     {
       "name": "users",
@@ -94,8 +94,8 @@
       ],
       "indices": [],
       "id": 1,
-      "x": -292,
-      "y": -193
+      "x": -291,
+      "y": -188
     },
     {
       "name": "organizations",
@@ -483,8 +483,8 @@
       ],
       "indices": [],
       "id": 8,
-      "x": 112,
-      "y": 185
+      "x": 94,
+      "y": 198
     },
     {
       "name": "timeline_tags",

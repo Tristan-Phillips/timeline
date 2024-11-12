@@ -1,7 +1,6 @@
 #include "user.h"
 
-User::User(std::string username) {
-    m_userInfo.setUsername(username);
+User::User(UserType userType) : m_userType(userType) {
 }
 
 UserInfo& User::getUserInfo() {

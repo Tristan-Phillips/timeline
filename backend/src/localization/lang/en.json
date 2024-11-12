@@ -1,6 +1,9 @@
 {
     "main_init": "Starting main process...",
     "mockDatabase_init": "Starting mock database...",
+    "mockDatabase_connect": "Connected to mock database",
+    "mockDatabase_disconnect": "Disconnected from mock database",
+    "mockDatabase_executeQuery": "Executing query in mock database",
     "smtp_unable_to_create_SSL_context": "Unable to create SSL context",
     "smtp_unable_to_resolve_smtp_server_address": "Unable to resolve SMTP server address",
     "smtp_unable_to_create_socket": "Unable to create socket",
