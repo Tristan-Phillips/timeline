@@ -7,5 +7,5 @@
     "smtp_cannot_connect_to_the_smtp_server": "Cannot connect to the SMTP server",
     "smtp_ssl_connection_failed": "SSL connection failed",
     "smtp_failed_to_send_command_to_smtp_server": "Failed to send command to SMTP server",
-    "smtp_failed_to_read_response_from_smtp_server": "Failed to read response from SMTP server" 
+    "smtp_failed_to_read_response_from_smtp_server": "Failed to read response from SMTP server"
 }
